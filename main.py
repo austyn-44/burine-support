@@ -12,7 +12,18 @@ bot = commands.Bot(command_prefix=PREFIX, description='Hi')
 async def on_ready():
     activity = discord.Game(name="Supporting Users!", type=3)
     await bot.change_presence(status=discord.Status.online, activity=activity)
-    print("Bot is ready!")
+    print("I'm is ready!")
+
+@bot.command()
+@commands.has_permissions(manage_roles=True)
+async def roleadd(ctx, role: discord.Role, user: discord.Member):
+  await user.add_roles(role)
+  embed = discord.Embed(
+    title='ROLE ADD COMMAND',
+    description=f'  Given Role To {role.mention} to {user.mention}',
+    color=0xffffff
+  )
+  await ctx.send(embed=embed)
 
 @bot.command()
 @commands.has_permissions(kick_members=True)
