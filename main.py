@@ -62,11 +62,35 @@ async def stuff(message):
         color = 0xFFFFFF
       )
 
+@bot.listen('on_message')
+async def stuff(message):
+    if message.content.startswith("Invite"):
+
+
+      embed = discord.Embed(
+        title = '',
+        description = '''Do you want To Invite **Burnie Bot** ? Click [here](https://discord.com/api/oauth2/authorize?client_id=970555340775112704&permissions=8&scope=bot%20applications.commands)''',
+        color = 0xFFFFFF
+      )
+
       msg = await message.channel.send(embed=embed)
 
 @bot.listen('on_message')
 async def stuff(message):
   if message.content.startswith("vote"):
+
+
+    embed = discord.Embed(
+      title = '',
+      description = '''Do you want to vote **Burnie Bot** ? Click [here](https://discordbotlist.com/bots/burnie/upvote)''',
+      color = 0xFFFFFF
+    )
+
+    msg = await message.channel.send(embed=embed)
+
+@bot.listen('on_message')
+async def stuff(message):
+  if message.content.startswith("Vote"):
 
 
     embed = discord.Embed(
