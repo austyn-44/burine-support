@@ -4,6 +4,8 @@ from discord.ext import commands
 import asyncio
 intents = discord.Intents.default()
 intents.members = True
+client = discord.Client(intents=intents)
+import os
 
 PREFIX = ("-")
 bot = commands.Bot(command_prefix=PREFIX, description='Hi')
